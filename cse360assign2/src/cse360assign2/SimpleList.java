@@ -128,10 +128,16 @@ public class SimpleList
 	}
 	
 	public int last() {
-		if(list[list.length - 1] == '\0') {
+		if(list[0] == '\0') {
 			return -1;
 		}
-		return list[list.length - 1];
+		int counter = 0;
+		int inx = 0;
+		while(list[inx] != '\0') {
+			counter++;
+			inx++;
+		}
+		return list[counter-1];
 	}
 	
 	public int size() {
