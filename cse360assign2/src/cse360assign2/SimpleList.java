@@ -25,8 +25,8 @@ public class SimpleList
 		}
 		
 		if(count > 0) {
-			for(int inx = count; inx > 0; inx--) {
-				list[inx] = list[inx - 1];
+			for(int inx = 0; inx < list.length - 1; inx++) {
+				list[inx] = list[inx + 1];
 			}
 		}
 		count++;
