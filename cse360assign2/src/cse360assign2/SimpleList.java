@@ -1,6 +1,7 @@
 //Joshua Yi
 //#178
 //creating repositories and uploading to them.
+
 package cse360assign2;
 public class SimpleList
 {
@@ -13,7 +14,7 @@ public class SimpleList
 	}
 	
 	public void add(int a) {
-		if(count == list.length - 1) {	
+		if(count == list.length) {	
 			int size = (int)Math.floor(list.length * 1.5);
 			int temp[] = new int[size];
 			
@@ -142,6 +143,7 @@ public class SimpleList
 			counter++;
 			inx++;
 		}
+		
 		spaces = list.length - counter;
 		return spaces;
 	}
