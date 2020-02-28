@@ -14,7 +14,7 @@ public class SimpleList
 	}
 	
 	public void add(int a) {
-		if(count == list.length) {	
+		if(count == list.length && count > 1) {	
 			int size = (int)Math.floor(list.length * 1.5);
 			int temp[] = new int[size];
 			
@@ -25,8 +25,8 @@ public class SimpleList
 		}
 		
 		if(count > 0) {
-			for(int inx = 0; inx < list.length - 1; inx++) {
-				list[inx] = list[inx + 1];
+			for(int inx = count; inx > 0; inx--) {
+				list[inx] = list[inx - 1];
 			}
 		}
 		count++;
@@ -137,7 +137,7 @@ public class SimpleList
 			counter++;
 			inx++;
 		}
-		return list[counter-1];
+		return list[counter+1];
 	}
 	
 	public int size() {
@@ -150,7 +150,7 @@ public class SimpleList
 			inx++;
 		}
 		
-		spaces = list.length - counter;
+		spaces = (list.length) - (counter) - 1;
 		return spaces;
 	}
 }
