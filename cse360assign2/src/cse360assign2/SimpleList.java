@@ -1,19 +1,26 @@
 //Joshua Yi
 //#178
-//creating repositories and uploading to them.
+//Assignment number 2
+//Description: Working on/building upon previous assignment.
+//			   Adding new methods and modifying existing ones.
+//			   discovering how to upload onto github and the practicality of it.
 
 package cse360assign2;
 public class SimpleList
 {
 	private int list[];
 	private int count;
-
+	
 	public SimpleList() {
 		list = new int[10];
 		count = 0;
 	}
 	
+	//adding method which adds user defined value into the front of the array
 	public void add(int a) {
+		
+		//if list is full and user is trying to add onto list, it creates a temp
+		//list to make original list larger
 		if(count == list.length && count > 1) {	
 			int size = (int)Math.floor(list.length * 1.5);
 			int temp[] = new int[size];
@@ -33,9 +40,12 @@ public class SimpleList
 		list[0] = a;
 	}
 	
+	//removes user input value from array
 	public void remove(int r) {
 		boolean found = false;
 		
+		//whenever remove is called, this if statement checks for unnecessary
+		//space then removes all of it.
 		if(count > 1) {
 			double reduce = count/(list.length - 1);
 			int space = 1;
@@ -74,6 +84,7 @@ public class SimpleList
 		}
 	}
 	
+	//adds user input integer to the end of the array
 	public void append(int c) {
 		if(count == list.length - 1) {	
 			
@@ -89,10 +100,12 @@ public class SimpleList
 		count++;
 	}
 	
+	//method returns the count of the array
 	public int count() {
 		return count; //this statement returns the current count of the array
 	}
 	
+	//method prints the content of the array
 	public String toString() {
 		String string = "";
 		
@@ -109,6 +122,7 @@ public class SimpleList
 		return string;
 	}
 	
+	//this method searches for the user input. returns number if found, -1 if not
 	public int search(int s) {
 		
 		for(int inx = 0; inx < count; inx++) {
@@ -120,6 +134,8 @@ public class SimpleList
 		return -1;
 	}
 	
+	//method checks if the array is empty. returns number if it is
+	//not empty and -1 if it is
 	public int first() {
 		if(list[0] == '\0') {
 			return -1;
@@ -127,12 +143,14 @@ public class SimpleList
 		return list[0];
 	}
 	
+	//same as last method but prints out last value in array. -1 if empty.
 	public int last() {
 		if(list[0] == '\0') {
 			return -1;
 		}
 		int counter = 0;
 		int inx = 0;
+		
 		while(list[inx] != '\0') {
 			counter++;
 			inx++;
@@ -140,6 +158,7 @@ public class SimpleList
 		return list[counter+1];
 	}
 	
+	//method calculates the unused space in array and returns that value
 	public int size() {
 		int inx = 0;
 		int counter = 0;
